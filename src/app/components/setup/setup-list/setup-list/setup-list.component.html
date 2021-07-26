@@ -1,0 +1,52 @@
+<h1 class="headerList">List of setup</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group" id="lstGroupSetup">
+            <li class="list-group-item" *ngFor="let setup of setups; let i = index"
+                    [class.active]="i == currentIndex" (click)="setActiveRecord(setup,i)">
+
+                    {{setup.setupName}}
+
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8" *ngIf="activeRecord.insuranceSetupId">
+        <h4>Details</h4>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Min Age</th>
+                <th scope="col">Max Age</th>
+                <th scope="col">Min Range</th>
+                <th scope="col">Max Range</th>
+                <th scope="col">Increments</th>
+                <th scope="col">Guranteed Issue</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{activeRecord.minAge}}</td>
+                <td>{{activeRecord.maxAge}}</td>
+                <td>{{activeRecord.minRange}}</td>
+                <td>{{activeRecord.maxRange}}</td>
+                <td>{{activeRecord.increments}}</td>
+                <td>{{activeRecord.guaranteedIssue | currency: 'PHP'}}</td>
+                <td>
+                    
+                    <a routerLink="#" (click)="setAction('Update')">Edit</a> | 
+                    <a routerLink="#" (click)="setAction('Delete')">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+    </div>
+</div>
+<div class="row" *ngIf="hasAction">
+    <div class="col-md-12 offset-md-4 mt-5">
+      <app-setup-detail [setupDetail]=activeRecord [action]=action></app-setup-detail>
+    </div>
+</div>

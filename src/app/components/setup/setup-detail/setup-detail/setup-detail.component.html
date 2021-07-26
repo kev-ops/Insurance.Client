@@ -1,0 +1,37 @@
+<h2>{{action}} Setup</h2>
+
+<div class="col-md-4">
+    <form (submit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Setup Name</label>
+            <input type="text" class="form-control" name="setupName" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.setupName" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Min Age</label>
+            <input type="number" name="minAge" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.minAge" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Max Age</label>
+            <input type="number" name="maxAge" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.maxAge" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Min Range</label>
+            <input type="number" name="minRange" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.minRange" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Max Range</label>
+            <input type="number" name="maxRange" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.maxRange" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Increment</label>
+            <input type="number" name="increments" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.increments" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Guranteed Issue</label>
+            <input type="number" name="guaranteedIssue" class="form-control" [readOnly]="action=='Delete'" [(ngModel)]="setupDetail.guaranteedIssue" required>
+        </div>
+        <input type="submit" value="Save Changes" class="btn btn-success">
+    </form>
+<!-- 
+    {{setupDetail | json}} -->
+</div>

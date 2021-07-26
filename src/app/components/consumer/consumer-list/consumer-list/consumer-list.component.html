@@ -1,0 +1,38 @@
+<h2>Consumer List</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of consumers; let i = index" [class.active]="i == currentIndex"
+                (click)="setActiveRecord(item,i)">
+
+
+                {{item.consumerName}}
+
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8" *ngIf="activeRecord.consumerId">
+        <div class="card" style="width: 36rem;">
+            <div class="card-body">
+                <h6 class="card-title ">{{activeRecord.consumerName}}</h6>
+                <h6 class="card-title mb-2 text-muted">Salary: {{activeRecord.basicSalary | currency: 'PHP'}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Age: {{activeRecord.age}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Birth Date: {{activeRecord.birthDate | date: 'yyyy-MM-dd' }}
+                </h6>
+                <h6 class="card-subtitle mb-2 text-muted">Application Date: {{activeRecord.createdDate | date:
+                    'yyyy-MM-dd' }}</h6>
+                <a [routerLink]="['/consumer/preview',activeRecord.consumerId]" routerLinkActive="router-link-active"
+                    class="card-link">Edit</a>
+                <a routerLink="#" class="card-link" (click)="onDeleteConsumer()">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-5" *ngIf="activeRecord.consumerId">
+    <div class="col-md-8 offset-md-4">
+        <app-benefit-detail [benefits]=benefitDetail></app-benefit-detail>
+    </div>
+</div>
+<!--  -->

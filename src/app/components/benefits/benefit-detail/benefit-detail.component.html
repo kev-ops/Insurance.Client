@@ -1,0 +1,22 @@
+
+<h2>Benefits</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Multiple</th>
+            <th scope="col">Benefits Amt Quotation</th>
+            <th scope="col">Pended Amount</th>
+            <th scope="col">Benefits</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of benefits">
+            <th scope="row">{{item.multiple}}</th>
+            <td>{{item.benefits_Amount_Quotation | currency: 'PHP'}}</td>
+            <td>{{item.pended_Amount | currency: 'PHP'}}</td>
+            <td *ngIf="item.benefits">{{item.benefits | currency: 'PHP'}}</td>
+            <td *ngIf="!item.benefits">For Approval</td>
+        </tr>
+
+    </tbody>
+</table>

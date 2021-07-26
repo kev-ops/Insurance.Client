@@ -1,0 +1,40 @@
+<p>add-setup works!</p>
+
+<h1>Create a new setup</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form (submit)="onAdd()">
+            <div class="mb-3">
+                <label class="form-label">Setup Name</label>
+                <input type="text" class="form-control" name="setupName" [(ngModel)]="setup.setupName" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Min Age</label>
+                <input type="number" name="minAge" class="form-control" [(ngModel)]="setup.minAge" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Max Age</label>
+                <input type="number" name="maxAge" class="form-control" [(ngModel)]="setup.maxAge" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Min Range</label>
+                <input type="number" name="minRange" class="form-control" [(ngModel)]="setup.minRange" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Max Range</label>
+                <input type="number" name="maxRange" class="form-control" [(ngModel)]="setup.maxRange" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Increment</label>
+                <input type="number" name="increments" class="form-control" [(ngModel)]="setup.increments" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Guranteed Issue</label>
+                <input type="number" name="guaranteedIssue" class="form-control" [(ngModel)]="setup.guaranteedIssue" required>
+            </div>
+            <input type="submit" value="Create Setup" class="btn btn-success">
+        </form>
+
+        {{setup | json}}
+    </div>
+</div>
