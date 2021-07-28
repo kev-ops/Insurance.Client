@@ -17,6 +17,7 @@
         <div class="card" style="width: 36rem;">
             <div class="card-body">
                 <h6 class="card-title ">{{activeRecord.consumerName}}</h6>
+                <h6 class="card-title mb-2 text-muted">Setup Id: {{activeRecord.insuranceSetupId}}</h6>
                 <h6 class="card-title mb-2 text-muted">Salary: {{activeRecord.basicSalary | currency: 'PHP'}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Age: {{activeRecord.age}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Birth Date: {{activeRecord.birthDate | date: 'yyyy-MM-dd' }}

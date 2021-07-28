@@ -89,4 +89,12 @@ export class PreviewAddConsumerComponent implements OnInit {
     else
       this.updateConsumer();
   }
+
+  dateChange(event) {
+
+    var dt = new Date(event.target.value);
+    this.consumer.birthDate = dt;
+    
+    console.log(event);
+  }
 }

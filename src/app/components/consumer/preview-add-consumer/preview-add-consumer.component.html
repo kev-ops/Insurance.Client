@@ -24,7 +24,8 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Birth Date</label>
-                <input type="date" class="form-control" name="birthDate" value="{{consumer.birthDate}}" [ngModel]="consumer.birthDate | date: 'yyyy-MM-dd' " required>
+                <!-- <input type="date" class="form-control" name="birthDate" value="{{consumer.birthDate}}" [(ngModel)]="consumer.birthDate  " required> -->
+                <input type="date" class="form-control" name="birthDate" value="{{consumer.birthDate}}" [ngModel]="consumer.birthDate | date: 'yyyy-MM-dd' " (ngModelChange)="dateChange(consumer.birthDate = $event)" required>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" name="preview" (click)="onPreviewClick()">Preview</button>
